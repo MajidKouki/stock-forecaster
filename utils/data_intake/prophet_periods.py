@@ -20,10 +20,7 @@ def prophet_periods(timeframe, tf):
     elif length == "" and timeframe == "1Min":
         length = 1440
     else:
-        if length == int:
-            pass
-        else:
-            sys.exit("Please try again using a valid number (int).")
+        pass
 
     # Ensure length variable is an integer to prevent Prophet errors
     length = int(length)
