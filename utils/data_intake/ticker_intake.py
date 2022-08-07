@@ -2,7 +2,7 @@
 import questionary
 import sys
 
-# Create a function that asks user for ticker data for use with Alpaca API. Ensure ticker is formatted properly by converting to upper case.
+# Create a function that asks user for ticker data for use with Alpaca API. Ensure ticker is formatted properly by converting to upper case
 def ticker_intake():
     print("\n")
 

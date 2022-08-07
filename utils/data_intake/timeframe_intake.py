@@ -12,7 +12,7 @@ def timeframe_intake():
         choices=["1Day", "1Hour", "1Min"]
     ).ask()
 
-    # Use a loop to set tf and frequency based on selected timeframe. Error message included just in case.
+    # Use a loop to set tf and frequency based on selected timeframe. Error message included just in case
     if timeframe == "1Day":
         frequency = "D"
         tf = "Days"
