@@ -37,7 +37,7 @@ def run():
     end_date = end_date_intake()
 
     # Intake filename data from user and assign to name
-    name = filename_intake()
+    name = filename_intake(tickers, length, tf)
 
 
     # Use Alpaca API to create data_df dataframe for Prophet
