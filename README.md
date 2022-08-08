@@ -28,6 +28,8 @@ This project leverages python with the following packages:
 
 ## Installation Guide
 
+This project assumes the user has basics setup (git, terminal or git bash, python). If not, please refer to appropriate websites and documentation prior to using this project.
+
 Before first running the application, it may be necessary to install the required dependencies. This can be done using traditional pip installation or the included install file (recommended).
 
 To install using the install file, navigate to the project directory and run the following code:
