@@ -85,6 +85,15 @@ Example outputs of the code are as follows:
 
 ---
 
+## Planned features
+
+* Cryptocurrency data compatibility
+* Pandas TA trading strategy & indicator chart options
+* Buy & sell algorithm to help identify exit and entry points in data
+* More comprehensive error messages and sys.exit statements to ensure consistent results
+
+---
+
 ## Contributors
 
 Brought to you by Majid Kouki. You can reach me at [majidkpy@gmail.com](mailto:majidkpy@gmail.com).
