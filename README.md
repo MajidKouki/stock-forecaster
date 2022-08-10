@@ -24,6 +24,8 @@ This project leverages python with the following packages:
 
 * [numpy](https://github.com/numpy/numpy) - For Prophet usage.
 
+* [Pandas TA](https://github.com/twopirllc/pandas-ta) - For indicators.
+
 ---
 
 ## Installation Guide
