@@ -87,10 +87,12 @@ Example outputs of the code are as follows:
 
 ## Planned features
 
-* Cryptocurrency data compatibility
+* ~~Cryptocurrency data compatibility~~
 * Pandas TA trading strategy & indicator chart options
 * Buy & sell algorithm to help identify exit and entry points in data
 * More comprehensive error messages and sys.exit statements to ensure consistent results
+* Possible transition from Alpaca to Yahoo Finance for ease of use
+* Possible transition from CLI app to web app for ease of use
 
 ---
 
