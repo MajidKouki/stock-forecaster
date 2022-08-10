@@ -7,7 +7,7 @@ from utils.financial_disclaimer import financial_disclaimer
 from utils.prophet_forecast import prophet_forecast
 from utils.alpaca_api import alpaca_api, alpaca_api_crypto
 from utils.crypto_or_stock import crypto_or_stock
-# from utils.technical_signals import technical_signals
+from utils.technical_signals import technical_signals
 
 # Custom imports - Data Intake Utilities
 from utils.data_intake.timeframe_intake import timeframe_intake
@@ -45,12 +45,12 @@ def stock_forecast():
     data_plot, trends_plot = prophet_forecast(data_df, length, frequency)
 
     # Use Pandas TA to identify buy and sell signals
-    # signals_plot = technical_signals(data_df)
+    signals_plot = technical_signals(data_df)
 
     # Save Prophet plots to 'imgs' folder using chosen filenames
     data_plot.savefig(f"./imgs/{name}Forecast.png")
     trends_plot.savefig(f"./imgs/{name}Trends.png")
-    # signals_plot.savefig(f"./imgs/{name}Signals.png")
+    signals_plot.savefig(f"./imgs/{name}Signals.png")
 
 
 # Forecast code using Alpaca get_crypto_bars for crypto data
@@ -80,12 +80,12 @@ def crypto_forecast():
     data_plot, trends_plot = prophet_forecast(data_df, length, frequency)
 
     # Use Pandas TA to identify buy and sell signals
-    # signals_plot = technical_signals(data_df)
+    signals_plot = technical_signals(data_df)
 
     # Save Prophet plots to 'imgs' folder using chosen filenames
     data_plot.savefig(f"./imgs/{name}Forecast.png")
     trends_plot.savefig(f"./imgs/{name}Trends.png")
-    # signals_plot.savefig(f"./imgs/{name}Signals.png")
+    signals_plot.savefig(f"./imgs/{name}Signals.png")
 
 
 # Define function to house the program for use with Fire library
