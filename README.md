@@ -78,7 +78,7 @@ As the program is opened, a financial disclaimer will appear to ensure the user 
 * Data End Date - Default is current date on system
 * Filename - Defaults are 1 & 2
 
-Many of these have default values outside of the stock ticker, which is required to run the program. After all values have been provided, the program will pull data using the Alpaca API, prepare it, use it with the Prophet model, and save a forecast plot and a trend plot to the 'imgs' folder.
+Many of these have default values outside of the stock ticker, which is required to run the program. After all values have been provided, the program will pull data using the Alpaca API, prepare it, use it with the Prophet model, and save a forecast plot and a trend plot to the 'imgs' folder. Program now creates a third plot displaying EMA 14 and EMA 28 as well as buy and sell signals for a basic trade strategy recommendation.
 
 Example outputs of the code are as follows:
 
@@ -91,8 +91,10 @@ Example outputs of the code are as follows:
 ## Planned features
 
 * ~~Cryptocurrency data compatibility~~
-* Pandas TA trading strategy & indicator chart options
-* Buy & sell algorithm to help identify exit and entry points in data
+* ~~Pandas TA trading strategy & indicator chart options~~
+* Ability to modify indicators
+* ~~Buy & sell algorithm to help identify exit and entry points in data~~
+* Signal labels
 * More comprehensive error messages and sys.exit statements to ensure consistent results
 * Possible transition from Alpaca to Yahoo Finance for ease of use
 * Possible transition from CLI app to web app for ease of use
