@@ -24,6 +24,8 @@ This project leverages python with the following packages:
 
 * [numpy](https://github.com/numpy/numpy) - For Prophet usage.
 
+* [Pandas TA](https://github.com/twopirllc/pandas-ta) - For indicators.
+
 ---
 
 ## Installation Guide
@@ -80,8 +82,9 @@ Many of these have default values outside of the stock ticker, which is required
 
 Example outputs of the code are as follows:
 
-<img src="./imgs/Example_Charts1.png" alt="Forecast Plot" width="1000" height="300">
-<img src="./imgs/Example_Charts2.png" alt="Trend Plot" width="1000" height="600">
+<img src="./imgs/Example_Forecast.png" alt="Forecast Plot" width="1000" height="300">
+<img src="./imgs/Example_Signals.png" alt="Signals Plot" width="1000" height="300">
+<img src="./imgs/Example_Trends.png" alt="Trend Plot" width="1000" height="600">
 
 ---
 

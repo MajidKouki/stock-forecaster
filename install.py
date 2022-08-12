@@ -16,5 +16,6 @@ subprocess.check_call([
     "datetime",
     "alpaca_trade_api",
     "numpy",
-    "python-dotenv"
+    "python-dotenv",
+    "pandas_ta"
 ])

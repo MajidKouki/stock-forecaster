@@ -7,6 +7,8 @@ from utils.financial_disclaimer import financial_disclaimer
 from utils.prophet_forecast import prophet_forecast
 from utils.alpaca_api import alpaca_api, alpaca_api_crypto
 from utils.crypto_or_stock import crypto_or_stock
+from utils.technical_signals import technical_signals
+
 # Custom imports - Data Intake Utilities
 from utils.data_intake.timeframe_intake import timeframe_intake
 from utils.data_intake.ticker_intake import ticker_intake, ticker_intake_crypto
@@ -42,10 +44,13 @@ def stock_forecast():
     # Use Prophet to intake data from previous functions and produce a forecast plot and a trend plot
     data_plot, trends_plot = prophet_forecast(data_df, length, frequency)
 
+    # Use Pandas TA to identify buy and sell signals
+    signals_plot = technical_signals(data_df)
+
     # Save Prophet plots to 'imgs' folder using chosen filenames
-    data_plot.savefig(f"./imgs/{name}Forecast.png")
-    trends_plot.savefig(f"./imgs/{name}Trends.png")
-    # indicator_plot.savefig(f"./imgs/{name}Indicators.png")
+    data_plot.savefig(f"./imgs/{name}Forecast.png", dpi=300)
+    trends_plot.savefig(f"./imgs/{name}Trends.png", dpi=300)
+    signals_plot.savefig(f"./imgs/{name}Signals.png", dpi=300)
 
 
 # Forecast code using Alpaca get_crypto_bars for crypto data
@@ -74,10 +79,13 @@ def crypto_forecast():
     # Use Prophet to intake data from previous functions and produce a forecast plot and a trend plot
     data_plot, trends_plot = prophet_forecast(data_df, length, frequency)
 
+    # Use Pandas TA to identify buy and sell signals
+    signals_plot = technical_signals(data_df)
+
     # Save Prophet plots to 'imgs' folder using chosen filenames
-    data_plot.savefig(f"./imgs/{name}Forecast.png")
-    trends_plot.savefig(f"./imgs/{name}Trends.png")
-    # indicator_plot.savefig(f"./imgs/{name}Indicators.png")
+    data_plot.savefig(f"./imgs/{name}Forecast.png", dpi=300)
+    trends_plot.savefig(f"./imgs/{name}Trends.png", dpi=300)
+    signals_plot.savefig(f"./imgs/{name}Signals.png", dpi=300)
 
 
 # Define function to house the program for use with Fire library
@@ -93,6 +101,7 @@ def run():
         stock_forecast()
     elif crypto_stock == "Cryptocurrency":
         crypto_forecast()
+
 
 # Run the program
 if __name__ == "__main__":

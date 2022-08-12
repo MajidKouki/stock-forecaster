@@ -31,13 +31,13 @@ def prophet_forecast(data_df, length, frequency):
     data_forecast = data_model.predict(data_future)
 
     # Plot Prophet predictions and save as data_plot
-    data_plot = data_model.plot(data_forecast)
+    data_plot = data_model.plot(data_forecast, figsize=(15, 10))
 
     # Reset dataframe index for trend plots
     data_forecast = data_forecast.reset_index()
 
     # Use plot_components function to plot trends
-    trends_plot = data_model.plot_components(data_forecast)
+    trends_plot = data_model.plot_components(data_forecast, figsize=(15, 10))
 
     # Return data_plot and Trends_plot for saving
     return data_plot, trends_plot
