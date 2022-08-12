@@ -48,9 +48,9 @@ def stock_forecast():
     signals_plot = technical_signals(data_df)
 
     # Save Prophet plots to 'imgs' folder using chosen filenames
-    data_plot.savefig(f"./imgs/{name}Forecast.png")
-    trends_plot.savefig(f"./imgs/{name}Trends.png")
-    signals_plot.savefig(f"./imgs/{name}Signals.png")
+    data_plot.savefig(f"./imgs/{name}Forecast.png", dpi=300)
+    trends_plot.savefig(f"./imgs/{name}Trends.png", dpi=300)
+    signals_plot.savefig(f"./imgs/{name}Signals.png", dpi=300)
 
 
 # Forecast code using Alpaca get_crypto_bars for crypto data
@@ -83,9 +83,9 @@ def crypto_forecast():
     signals_plot = technical_signals(data_df)
 
     # Save Prophet plots to 'imgs' folder using chosen filenames
-    data_plot.savefig(f"./imgs/{name}Forecast.png")
-    trends_plot.savefig(f"./imgs/{name}Trends.png")
-    signals_plot.savefig(f"./imgs/{name}Signals.png")
+    data_plot.savefig(f"./imgs/{name}Forecast.png", dpi=300)
+    trends_plot.savefig(f"./imgs/{name}Trends.png", dpi=300)
+    signals_plot.savefig(f"./imgs/{name}Signals.png", dpi=300)
 
 
 # Define function to house the program for use with Fire library
