@@ -46,8 +46,19 @@ def technical_signals(data_df):
     # signals_plot = 
 
 
-    # signals_plot = plt.figure(); data_df[["close"]].plot(); plt.legend()
+    signals_plot = plt.figure(figsize=(15, 10)); 
+    plt.scatter(data_df.index, data_df["buy_signals"], c='green');
+    plt.scatter(data_df.index, data_df["sell_signals"], c='red');
+    data_df["close"].plot(); 
+    data_df["EMA_14"].plot(); 
+    data_df["EMA_28"].plot(); 
+    # plt.scatter(y=["buy_signals", "sell_signals"], color='k');
+    # plt.scatter(data_df.index, data_df["buy_signals"], c='green');
+    # plt.scatter(data_df.index, data_df["sell_signals"], c='red');
+    # plt.plot(, c= "red", marker='.', linestyle=':')
+    plt.legend()
+    # ; plt.legend()
     # plt.figure(); df.plot(); plt.legend(loc='best') figsize=(15, 10)
 
 
-    # return signals_plot
+    return signals_plot
