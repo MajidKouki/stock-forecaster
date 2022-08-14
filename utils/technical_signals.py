@@ -49,42 +49,14 @@ def technical_signals(data_df):
     y1 = data_df["buy_signals"]
     y2 = data_df["sell_signals"]
 
-    signals_plot = plt.figure(figsize=(15, 10)); 
-    plt.scatter(x, y1, c='green');
-    plt.scatter(x, y2, c='red');
-    data_df["close"].plot(); 
-    data_df["EMA_14"].plot(); 
-    data_df["EMA_28"].plot(); 
-    # for i in enumerate():
-        # plt.annotate("buy", x[i]);
-
-    # ann = ["Buy"]
-
-    # for i, label in enumerate(ann):
-        # plt.annotate(label, (data_df["buy_signals"][i], data_df["buy_signals"][i]))
-
-    # for i, label in enumerate(ann):
-        # plt.annotate(label, (x[i], y1[i]))
-
-    # plt.scatter(z, y)
-
-    # for i, txt in enumerate(ann):
-        # plt.annotate(txt, (x[i], y1[i]))
-
-    
-
-    # plt.text(
-        # x=data_df.buy_signals["buy_signals"=="buy_signals"], y=data_df.sell_signals["sell_signals"=="buy_signals"]
-    # )
-    # plt.scatter(y=["buy_signals", "sell_signals"], color='k');
-    # plt.scatter(data_df.index, data_df["buy_signals"], c='green');
-    # plt.scatter(data_df.index, data_df["sell_signals"], c='red');
-    # plt.plot(, c= "red", marker='.', linestyle=':')
-    # plt.legend()
-    plt.legend()
+    signals_plot = plt.figure(figsize=(15, 10));
+    plt.scatter(x, y1, c='green', s=30, marker="v");
+    plt.scatter(x, y2, c='red', marker="^");
+    data_df["close"].plot();
+    data_df["EMA_14"].plot();
+    data_df["EMA_28"].plot();
+    plt.legend();
     plt.grid(True)
-    # ; plt.legend()
-    # plt.figure(); df.plot(); plt.legend(loc='best') figsize=(15, 10)
 
 
     return signals_plot
