@@ -10,19 +10,19 @@ This project leverages python with the following packages:
 
 * [Pandas](https://github.com/pandas-dev/pandas) - For plotting and dataframes.
 
-* [dotenv](https://pypi.org/project/python-dotenv/) - For accessing the .env file.
+* [Dotenv](https://pypi.org/project/python-dotenv/) - For accessing the .env file.
 
 * [Prophet](https://github.com/facebook/prophet) - For forecasting.
 
 * [Alpaca Trade API](https://github.com/alpacahq/alpaca-trade-api-python) - For financial data from [Alpaca](https://alpaca.markets)
 
-* [fire](https://github.com/google/python-fire) - For the command line interface and entry-point.
+* [Fire](https://github.com/google/python-fire) - For the command line interface and entry-point.
 
-* [questionary](https://github.com/tmbo/questionary) - For interactive user prompts and dialogs.
+* [Questionary](https://github.com/tmbo/questionary) - For interactive user prompts and dialogs.
 
-* [matplotlib](https://github.com/matplotlib/matplotlib) - For plotting.
+* [Matplotlib](https://github.com/matplotlib/matplotlib) - For plotting.
 
-* [numpy](https://github.com/numpy/numpy) - For Prophet usage.
+* [Numpy](https://github.com/numpy/numpy) - For Prophet usage.
 
 * [Pandas TA](https://github.com/twopirllc/pandas-ta) - For indicators.
 
@@ -43,7 +43,7 @@ python install.py install
 This will run a subprocess to install all the dependencies in a single command. Alternatively, manual installation can be done as follows:
 
 ```
-pip install pandas, prophet, questionary, fire, matplotlib, datetime, numpy, prophet, python-dotenv, alpaca-trade-api
+pip install pandas, prophet, questionary, fire, matplotlib, datetime, numpy, prophet, python-dotenv, alpaca-trade-api, pandas_ta
 ```
 
 Next it will be necessary to populate a .env file with the necessary Alpaca API keys. Signing up with Alpaca is easy and allows future usage with data and trading APIs. An example.env file is included and can be used to store API data as long as it's properly renamed. Example of the .env:
@@ -71,12 +71,13 @@ python app.py
 
 As the program is opened, a financial disclaimer will appear to ensure the user is aware any risks that may arise from following the advice given by the software. After agreeing to it, the program takes the following user data:
 
-* Stock Ticker - ex. SPY
+* Stock or Crypto data
+* Stock Ticker - ex. SPY or BTC
 * Timeframe - Either 1Day, 1Hour or 1Min
 * Forecast Length - Defaults are 30 days, 720 hours, or 1440 minutes
-* Data Start Date - Default is 2018-01-01
+* Data Start Date - Default is 2020-01-01
 * Data End Date - Default is current date on system
-* Filename - Defaults are 1 & 2
+* Filename - Defaults are {ticker}{length}{timeframe}Forecast, Signals, Trends. ex. SPY30DayTrends
 
 Many of these have default values outside of the stock ticker, which is required to run the program. After all values have been provided, the program will pull data using the Alpaca API, prepare it, use it with the Prophet model, and save a forecast plot and a trend plot to the 'imgs' folder. Program now creates a third plot displaying EMA 14 and EMA 28 as well as buy and sell signals for a basic trade strategy recommendation.
 
