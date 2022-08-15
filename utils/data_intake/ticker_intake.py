@@ -6,7 +6,7 @@ import sys
 def ticker_intake():
     print("\n")
 
-    tickers = questionary.text("What stock ticker would you like to forecast? Ex. SPY").ask()
+    tickers = questionary.text("What stock ticker would you like to forecast? Ex. SPY or AAPL").ask()
 
     # If no ticker is given, sys.exit
     if tickers == "":
@@ -25,7 +25,7 @@ def ticker_intake():
 def ticker_intake_crypto():
     print("\n")
 
-    tickers = questionary.text("What stock ticker would you like to forecast? Ex. BTCUSD").ask()
+    tickers = questionary.text("What stock ticker would you like to forecast? Ex. BTC or ETH").ask()
 
     # If no ticker is given, sys.exit
     if tickers == "":
@@ -35,6 +35,8 @@ def ticker_intake_crypto():
 
     # If ticker is given, use .upper() to ensure its properly formatted for API
     tickers = tickers.upper()
+
+    tickers = tickers + "USD"
 
     # Return ticker for later use
     return tickers
