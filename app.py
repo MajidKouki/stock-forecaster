@@ -20,6 +20,8 @@ from utils.data_intake.prophet_periods import prophet_periods
 import streamlit as st
 
 
+
+
 # Define function to house the program for use with Fire library
 def run():
     # Display financial disclaimer before running the rest of the program
@@ -58,6 +60,8 @@ def run():
     # Use Prophet to intake data from previous functions and produce a forecast plot and a trend plot
     data_plot, trends_plot = prophet_forecast(data_df, length, frequency)
 
+    st.pyplot(data_plot)
+
     # Use Pandas TA to identify buy and sell signals
     signals_plot = technical_signals(data_df)
 
@@ -66,6 +70,7 @@ def run():
     # trends_plot.savefig(f"./imgs/{name}Trends.png", dpi=300)
     # signals_plot.savefig(f"./imgs/{name}Signals.png", dpi=300)
 
+    
 
 # Run the program
 if __name__ == "__main__":
