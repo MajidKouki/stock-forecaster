@@ -1,16 +1,17 @@
 # Import initial libraries and dependencies
 import questionary
 import sys
+import streamlit as st
 
 # Create a function that asks user to select from a list of three timeframes for usage with Alpaca API and Prophet
 def timeframe_intake():
-    print("\n")
+
 
     # Ask user to select one of three timeframes
-    timeframe = questionary.select(
+    timeframe = st.selectbox(
         "Which timeframe would you like to use?",
-        choices=["1Day", "1Hour", "1Min"]
-    ).ask()
+        ["1Day", "1Hour", "1Min"]
+    )
 
     # Use a loop to set tf and frequency based on selected timeframe. Error message included just in case
     if timeframe == "1Day":

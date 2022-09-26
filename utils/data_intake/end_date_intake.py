@@ -2,13 +2,12 @@
 from datetime import date
 import questionary
 import pandas as pd
+import streamlit as st
 
 # Create a function that asks user for data end date and defaults to the current date if nothing is given
 def end_date_intake():
-    print("\n")
-
     # Ask user to input a date using required format
-    end = questionary.text("Enter the end date using following format:'1234-56-78.' Default is current date.").ask()
+    end = st.text_input("Enter the end date using following format:'1234-56-78.' Default is current date.")
 
     # If nothing is entered, use default date
     if end == "":
