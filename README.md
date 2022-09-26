@@ -91,6 +91,7 @@ Example outputs of the code are as follows:
 
 ## Planned features
 
+* Streamlit conversion is beign tested for better UI/UX and speed of use
 * ~~Cryptocurrency data compatibility~~
 * ~~Pandas TA trading strategy & indicator chart options~~
 * Ability to modify indicators
