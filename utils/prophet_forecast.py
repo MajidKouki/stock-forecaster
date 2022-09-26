@@ -3,6 +3,7 @@ from prophet import Prophet
 import pandas as pd
 from datetime import datetime, timezone
 import time
+import streamlit as st
 
 # Create function to prepare data for usage with Prophet and run the model using previously given values.
 def prophet_forecast(data_df, length, frequency):

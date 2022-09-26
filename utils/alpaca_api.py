@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import alpaca_trade_api as tradeapi
 import pandas as pd
 import os
+import streamlit as st
 
 
 # Create a function to pull data from Alpaca API and prepare it for use by Prophet

@@ -17,6 +17,8 @@ from utils.data_intake.end_date_intake import end_date_intake
 from utils.data_intake.filename_intake import filename_intake
 from utils.data_intake.prophet_periods import prophet_periods
 
+import streamlit as st
+
 
 # Define function to house the program for use with Fire library
 def run():
@@ -60,9 +62,9 @@ def run():
     signals_plot = technical_signals(data_df)
 
     # Save Prophet plots to 'imgs' folder using chosen filenames
-    data_plot.savefig(f"./imgs/{name}Forecast.png", dpi=300)
-    trends_plot.savefig(f"./imgs/{name}Trends.png", dpi=300)
-    signals_plot.savefig(f"./imgs/{name}Signals.png", dpi=300)
+    # data_plot.savefig(f"./imgs/{name}Forecast.png", dpi=300)
+    # trends_plot.savefig(f"./imgs/{name}Trends.png", dpi=300)
+    # signals_plot.savefig(f"./imgs/{name}Signals.png", dpi=300)
 
 
 # Run the program
