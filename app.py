@@ -48,27 +48,26 @@ def run():
     # Intake end date from user and assign to end_date
     end_date = end_date_intake()
 
-    # Intake filename data from user and assign to name
-    name = filename_intake(tickers, length, tf)
-
     # Use Alpaca API to create data_df dataframe for Prophet
     if crypto_stock == "Stocks":
         data_df = alpaca_api(tickers, timeframe, start_date, end_date)
     elif crypto_stock == "Cryptocurrency":
         data_df = alpaca_api_crypto(tickers, timeframe, start_date, end_date)
 
+    if st.button("Run"):
+
     # Use Prophet to intake data from previous functions and produce a forecast plot and a trend plot
-    data_plot, trends_plot = prophet_forecast(data_df, length, frequency)
+        data_plot, trends_plot = prophet_forecast(data_df, length, frequency)
 
-    st.pyplot(data_plot)
+        # Use Pandas TA to identify buy and sell signals
+        signals_plot = technical_signals(data_df)
 
-    # Use Pandas TA to identify buy and sell signals
-    signals_plot = technical_signals(data_df)
+        # Display plots using streamlit.pyplot
+        st.pyplot(data_plot)
+        st.pyplot(trends_plot)
+        st.pyplot(signals_plot)
 
-    # Save Prophet plots to 'imgs' folder using chosen filenames
-    # data_plot.savefig(f"./imgs/{name}Forecast.png", dpi=300)
-    # trends_plot.savefig(f"./imgs/{name}Trends.png", dpi=300)
-    # signals_plot.savefig(f"./imgs/{name}Signals.png", dpi=300)
+
 
     
 
