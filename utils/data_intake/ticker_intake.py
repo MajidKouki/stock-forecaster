@@ -8,12 +8,6 @@ def ticker_intake():
 
     tickers = st.text_input("What stock ticker would you like to forecast? Ex. SPY or AAPL")
 
-    # If no ticker is given, sys.exit
-    if tickers == "":
-        sys.exit("Please try again using a valid ticker.")
-    else:
-        pass
-
     # If ticker is given, use .upper() to ensure its properly formatted for API
     tickers = tickers.upper()
 
@@ -25,12 +19,6 @@ def ticker_intake():
 def ticker_intake_crypto():
 
     tickers = st.text_input("What stock ticker would you like to forecast? Ex. BTC or ETH")
-
-    # If no ticker is given, sys.exit
-    if tickers == "":
-        sys.exit("Please try again using a valid ticker.")
-    else:
-        pass
 
     # If ticker is given, use .upper() to ensure its properly formatted for API
     tickers = tickers.upper()

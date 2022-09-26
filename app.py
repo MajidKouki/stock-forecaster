@@ -1,6 +1,7 @@
 # Import initial libraries and dependencies
 import fire
 import matplotlib
+import streamlit as st
 
 # Custom imports - Utilities
 from utils.financial_disclaimer import financial_disclaimer
@@ -16,11 +17,6 @@ from utils.data_intake.start_date_intake import start_date_intake
 from utils.data_intake.end_date_intake import end_date_intake
 from utils.data_intake.filename_intake import filename_intake
 from utils.data_intake.prophet_periods import prophet_periods
-
-import streamlit as st
-
-
-
 
 # Define function to house the program for use with Fire library
 def run():
@@ -48,15 +44,15 @@ def run():
     # Intake end date from user and assign to end_date
     end_date = end_date_intake()
 
-    # Use Alpaca API to create data_df dataframe for Prophet
-    if crypto_stock == "Stocks":
-        data_df = alpaca_api(tickers, timeframe, start_date, end_date)
-    elif crypto_stock == "Cryptocurrency":
-        data_df = alpaca_api_crypto(tickers, timeframe, start_date, end_date)
-
     if st.button("Run"):
 
-    # Use Prophet to intake data from previous functions and produce a forecast plot and a trend plot
+        # Use Alpaca API to create data_df dataframe for Prophet
+        if crypto_stock == "Stocks":
+            data_df = alpaca_api(tickers, timeframe, start_date, end_date)
+        elif crypto_stock == "Cryptocurrency":
+            data_df = alpaca_api_crypto(tickers, timeframe, start_date, end_date)
+
+        # Use Prophet to intake data from previous functions and produce a forecast plot and a trend plot
         data_plot, trends_plot = prophet_forecast(data_df, length, frequency)
 
         # Use Pandas TA to identify buy and sell signals
