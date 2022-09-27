@@ -1,5 +1,5 @@
 # Import initial libraries and dependencies
-from datetime import date
+from datetime import date, timedelta
 import pandas as pd
 import streamlit as st
 
@@ -10,7 +10,7 @@ def end_date_intake():
 
     # If nothing is entered, use default date
     if end == "":
-        end = str(date.yesterday())
+        end = str(date.today() - timedelta(days = 1))
         print(f"Default Date: {end}")
     else:
         print(f"Selected Date: {end}")
