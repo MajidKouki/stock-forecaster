@@ -1,5 +1,4 @@
 # Import initial libraries and dependencies
-import questionary
 import sys
 import streamlit as st
 

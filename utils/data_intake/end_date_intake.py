@@ -1,6 +1,5 @@
 # Import initial libraries and dependencies
 from datetime import date
-import questionary
 import pandas as pd
 import streamlit as st
 

@@ -1,5 +1,4 @@
 # Import initial libraries and dependencies
-import questionary
 import pandas as pd
 import streamlit as st
 

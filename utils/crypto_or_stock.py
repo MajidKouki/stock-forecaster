@@ -1,8 +1,6 @@
 # Import initial libraries and dependencies
-import questionary
 import sys
 import streamlit as st
-
 
 # Create a function that asks user to select either stocks or cryptocurrency to determine API usage
 def crypto_or_stock():
