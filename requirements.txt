@@ -1,5 +1,5 @@
 pandas
-prophet
+prophet==1.0
 questionary
 fire
 matplotlib
