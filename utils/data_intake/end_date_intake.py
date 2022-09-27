@@ -10,7 +10,7 @@ def end_date_intake():
 
     # If nothing is entered, use default date
     if end == "":
-        end = str(date.today())
+        end = str(date.yesterday())
         print(f"Default Date: {end}")
     else:
         print(f"Selected Date: {end}")
