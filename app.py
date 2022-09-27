@@ -14,7 +14,6 @@ from utils.data_intake.timeframe_intake import timeframe_intake
 from utils.data_intake.ticker_intake import ticker_intake, ticker_intake_crypto
 from utils.data_intake.start_date_intake import start_date_intake
 from utils.data_intake.end_date_intake import end_date_intake
-from utils.data_intake.filename_intake import filename_intake
 from utils.data_intake.prophet_periods import prophet_periods
 
 # Define function to house the program for use with Fire library
