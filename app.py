@@ -1,5 +1,4 @@
 # Import initial libraries and dependencies
-import fire
 import matplotlib
 import streamlit as st
 
@@ -63,10 +62,6 @@ def run():
         st.pyplot(trends_plot)
         st.pyplot(signals_plot)
 
-
-
-    
-
 # Run the program
 if __name__ == "__main__":
-    fire.Fire(run)
+    run()
