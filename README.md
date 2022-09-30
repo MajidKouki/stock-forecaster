@@ -1,6 +1,6 @@
-# Stock Forecasting CLI
+# Stock Forecaster
 
-Simple CLI application using Prophet library and Alpaca API to provide stock forecasts and trend data. This application was designed for a client with the intention of creating a very simple to use system for non-technical users with minimal setup and detailed instructions while enabling easy access to machine learning tools for time series forecasting and trend analysis.
+Web interface application utilizing Prophet library and Alpaca Trade API to provide stock forecasts and trend data. This application was designed for a client with the intention of creating a very simple to use system for non-technical users with minimal setup and detailed instructions while enabling easy access to machine learning tools for time series forecasting and trend analysis.
 
 ---
 
@@ -16,15 +16,13 @@ This project leverages python with the following packages:
 
 * [Alpaca Trade API](https://github.com/alpacahq/alpaca-trade-api-python) - For financial data from [Alpaca](https://alpaca.markets)
 
-* [Fire](https://github.com/google/python-fire) - For the command line interface and entry-point.
-
-* [Questionary](https://github.com/tmbo/questionary) - For interactive user prompts and dialogs.
-
 * [Matplotlib](https://github.com/matplotlib/matplotlib) - For plotting.
 
 * [Numpy](https://github.com/numpy/numpy) - For Prophet usage.
 
-* [Pandas TA](https://github.com/twopirllc/pandas-ta) - For indicators.
+<!-- * [Pandas TA](https://github.com/twopirllc/pandas-ta) - For indicators. -->
+
+* [Streamlit](https://github.com/streamlit/streamlit) - For deploying app in browser.
 
 ---
 
@@ -43,7 +41,7 @@ python install.py install
 This will run a subprocess to install all the dependencies in a single command. Alternatively, manual installation can be done as follows:
 
 ```
-pip install pandas, prophet, questionary, fire, matplotlib, datetime, numpy, prophet, python-dotenv, alpaca-trade-api, pandas_ta
+pip install pandas, prophet, matplotlib, datetime, numpy, prophet, python-dotenv, alpaca-trade-api, pandas_ta, streamlit
 ```
 
 Next it will be necessary to populate a .env file with the necessary Alpaca API keys. Signing up with Alpaca is easy and allows future usage with data and trading APIs. An example.env file is included and can be used to store API data as long as it's properly renamed. Example of the .env:
@@ -66,10 +64,10 @@ mv example.env .env
 After the initial setup and install, the program can be run by typing the following into the terminal:
 
 ```
-python app.py
+streamlit run app.py
 ```
 
-As the program is opened, a financial disclaimer will appear to ensure the user is aware any risks that may arise from following the advice given by the software. After agreeing to it, the program takes the following user data:
+As the program is opened, a financial disclaimer will appear to ensure the user is aware any risks that may arise from following the advice given by the software. The program intakes the following user data:
 
 * Stock or Crypto data
 * Stock Ticker - ex. SPY or BTC
@@ -77,15 +75,13 @@ As the program is opened, a financial disclaimer will appear to ensure the user 
 * Forecast Length - Defaults are 30 days, 720 hours, or 1440 minutes
 * Data Start Date - Default is 2020-01-01
 * Data End Date - Default is current date on system
-* Filename - Defaults are {ticker}{length}{timeframe}Forecast, Signals, Trends. ex. SPY30DayTrends
 
-Many of these have default values outside of the stock ticker, which is required to run the program. After all values have been provided, the program will pull data using the Alpaca API, prepare it, use it with the Prophet model, and save a forecast plot and a trend plot to the 'imgs' folder. Program now creates a third plot displaying EMA 14 and EMA 28 as well as buy and sell signals for a basic trade strategy recommendation.
+Many of these have default values outside of the stock ticker, which is required to run the program. After all values have been provided, the program will pull data using the Alpaca API, prepare it, use it with the Prophet model, and display a forecast plot and a trend plot.
 
 Example outputs of the code are as follows:
 
-<img src="./imgs/Example_Forecast.png" alt="Forecast Plot" width="1000" height="300">
-<img src="./imgs/Example_Signals.png" alt="Signals Plot" width="1000" height="300">
-<img src="./imgs/Example_Trends.png" alt="Trend Plot" width="1000" height="600">
+<img src="./imgs/web.jpeg" alt="Streamlit Web App" width="700" height="800">
+<img src="./imgs/chart.jpeg" alt="Resulting Charts" width="700" height="800">
 
 ---
 
@@ -111,3 +107,14 @@ Brought to you by Majid Kouki. You can reach me at [majidkpy@gmail.com](mailto:m
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
+file save removed
+streamlit displays
+
+python install.py
+streamlit run app.py
+or use deployed link
+
+transition API for less restraints
+yfinance maybe
