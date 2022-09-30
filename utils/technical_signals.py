@@ -42,7 +42,6 @@ def technical_signals(data_df):
     data_df["buy_signals"] = buy_signals
     data_df["sell_signals"] = sell_signals
 
-
     # Plot the close, 14-Day EMA and 28-Day EMA as well as a scatter plot of buy and sell signals
     # signals_plot = 
 
@@ -58,6 +57,5 @@ def technical_signals(data_df):
     data_df["EMA_28"].plot();
     plt.legend();
     plt.grid(True)
-
 
     return signals_plot
