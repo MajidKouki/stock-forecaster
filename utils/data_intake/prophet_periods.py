@@ -5,7 +5,7 @@ import streamlit as st
 # Create a function that asks the user how long they want to forecast into the future for use with Prophet
 def prophet_periods(timeframe, tf):
     st.write("The selected length will also determine how long the model takes to run. Keep that in mind when choosing.")
-    st.write("When entering a forecast amount, use only whole numbers and remember your timeframe choice. 1 day ex. 1Day = 1, 1Hour = 24, 1Min = 1440. Defaults are 30, 720, and 1440.")
+    # st.write("When entering a forecast amount, use only whole numbers and remember your timeframe choice. 1 day ex. 1Day = 1, 1Hour = 24, 1Min = 1440. Defaults are 30, 720, and 1440.")
 
     # Ask for user input for forecasting
     length = st.text_input("How long do you want to forecast?")
