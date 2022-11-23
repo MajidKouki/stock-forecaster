@@ -70,7 +70,7 @@ streamlit run app.py
 As the program is opened, a financial disclaimer will appear to ensure the user is aware any risks that may arise from following the advice given by the software. The program intakes the following user data:
 
 * Stock or Crypto data
-* Stock Ticker - ex. SPY or BTC
+* Ticker - ex. SPY or BTC
 * Timeframe - Either 1Day, 1Hour or 1Min
 * Forecast Length - Defaults are 30 days, 720 hours, or 1440 minutes
 * Data Start Date - Default is 2020-01-01
@@ -107,7 +107,7 @@ Brought to you by Majid Kouki. You can reach me at [majidkpy@gmail.com](mailto:m
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
+<!-- 
 
 file save removed
 streamlit displays
@@ -117,4 +117,4 @@ streamlit run app.py
 or use deployed link
 
 transition API for less restraints
-yfinance maybe
+yfinance maybe -->
