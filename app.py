@@ -6,6 +6,7 @@ import streamlit as st
 from utils.prophet_forecast import prophet_forecast
 from utils.alpaca_api import alpaca_api, alpaca_api_crypto
 from utils.crypto_or_stock import crypto_or_stock
+from utils.yahoo_api import yahoo_api
 # from utils.technical_signals import technical_signals
 
 # Custom imports - Data Intake Utilities
@@ -14,6 +15,8 @@ from utils.data_intake.ticker_intake import ticker_intake, ticker_intake_crypto
 from utils.data_intake.start_date_intake import start_date_intake
 from utils.data_intake.end_date_intake import end_date_intake
 from utils.data_intake.prophet_periods import prophet_periods
+from utils.data_intake.interval_intake import interval_intake
+from utils.data_intake.period_intake import period_intake
 
 # Define function to house the program for use with Fire library
 def run():
@@ -40,10 +43,14 @@ def run():
         length = prophet_periods(timeframe, tf)
 
         # Intake start date from user and assign to start_date
-        start_date = start_date_intake()
+        # start_date = start_date_intake()
 
         # Intake end date from user and assign to end_date
-        end_date = end_date_intake()
+        # end_date = end_date_intake()
+
+        period = period_intake()
+
+        interval = interval_intake()
 
         # Create a variable to store variable determining whether plots are displayed or not
         ran = False
@@ -54,10 +61,13 @@ def run():
                 ran = True
 
                 # Use Alpaca API to create data_df dataframe for Prophet
-                if crypto_stock == "Stocks":
-                    data_df = alpaca_api(tickers, timeframe, start_date, end_date)
-                elif crypto_stock == "Cryptocurrency":
-                    data_df = alpaca_api_crypto(tickers, timeframe, start_date, end_date)
+                # if crypto_stock == "Stocks":
+                #     data_df = alpaca_api(tickers, timeframe, start_date, end_date)
+                # elif crypto_stock == "Cryptocurrency":
+                #     data_df = alpaca_api_crypto(tickers, timeframe, start_date, end_date)
+
+                data_df = yahoo_api(tickers, period, interval)
+
 
                 # Use Prophet to intake data from previous functions and produce a forecast plot and a trend plot
                 data_plot, trends_plot = prophet_forecast(data_df, length, frequency)

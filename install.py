@@ -9,15 +9,14 @@ def install():
         "-m",
         "pip",
         "install",
-        "alpaca_trade_api",
-        "python-dotenv",
         "matplotlib",
         "pandas_ta",
         "streamlit",
         "datetime",
         "prophet",
         "pandas",
-        "numpy"
+        "numpy",
+        "yfinance"
     ])
 
 # Run program

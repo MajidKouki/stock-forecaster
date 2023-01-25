@@ -22,7 +22,7 @@ def ticker_intake_crypto():
     # If ticker is given, use .upper() to ensure its properly formatted for API
     tickers = tickers.upper()
 
-    tickers = tickers + "USD"
+    tickers = tickers + "-USD"
 
     # Return ticker for later use
     return tickers

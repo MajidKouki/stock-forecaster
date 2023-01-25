@@ -14,7 +14,7 @@ def prophet_forecast(data_df, length, frequency):
     data_df.columns = ["ds", "y"]
 
     # Remove datetimes for Prophet model usage
-    data_df["ds"] = data_df["ds"].dt.tz_convert(None)
+    # data_df["ds"] = data_df["ds"].dt.tz_convert(None)
 
     # Drop all NaN values, if any
     data_df = data_df.dropna()
