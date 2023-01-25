@@ -3,9 +3,6 @@ import pandas as pd
 import yfinance as yf
 import streamlit as st
 
-
-
-
 # Create a function to pull data from Yahoo Finance API and prepare it for use by Prophet
 def yahoo_api_stock(tickers, period, interval):
     # Create dataframe using API data
