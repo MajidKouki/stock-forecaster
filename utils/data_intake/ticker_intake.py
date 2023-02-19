@@ -10,7 +10,7 @@ def ticker_intake():
     # If ticker is given, use .upper() to ensure its properly formatted for API
     tickers = tickers.upper()
 
-    # If tickers box is left empty, use placeholder as default value
+    # If tickers box is left empty, use placeholder as default value. This is used instead of streamlit's value argument so the user doesn't need to delete the default text before inputting theirs
     if tickers == "":
         tickers = "SPY"
 
@@ -26,10 +26,10 @@ def ticker_intake_crypto():
     # If ticker is given, use .upper() to ensure its properly formatted for API
     tickers = tickers.upper()
 
-    # If tickers box is left empty, use placeholder as default value
+    # If tickers box is left empty, use placeholder as default value. This is used instead of streamlit's value argument so the user doesn't need to delete the default text before inputting theirs
     if tickers == "":
         tickers = "BTC"
-
+    
     tickers = tickers + "-USD"
 
     # Return ticker for later use
