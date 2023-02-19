@@ -12,13 +12,13 @@ from utils.yahoo_api import yahoo_api
 # Custom imports - Data Intake Utilities
 from utils.data_intake.timeframe_intake import timeframe_intake
 from utils.data_intake.ticker_intake import ticker_intake, ticker_intake_crypto
-from utils.data_intake.start_date_intake import start_date_intake
-from utils.data_intake.end_date_intake import end_date_intake
+# from utils.data_intake.start_date_intake import start_date_intake
+# from utils.data_intake.end_date_intake import end_date_intake
 from utils.data_intake.prophet_periods import prophet_periods
 from utils.data_intake.interval_intake import interval_intake
 from utils.data_intake.period_intake import period_intake
 
-# Define function to house the program for use with Fire library
+# Define function to house the program
 def run():
     with st.sidebar:
         # Use streamlit markdown to decorate the web interface
@@ -48,17 +48,19 @@ def run():
         # Intake end date from user and assign to end_date
         # end_date = end_date_intake()
 
+        # Intake period from user and assign to period
         period = period_intake()
 
+        # Intake interval from user and assign to interval
         interval = interval_intake()
 
-        # Create a variable to store variable determining whether plots are displayed or not
+        # Create a variable to determine whether plots are displayed or not
         ran = False
 
         if st.button("Run"):
             with st.spinner("Loading..."):
-                # Switch ran to True to show plots
-                ran = True
+                # # Switch ran to True to show plots
+                # ran = True
 
                 # Use Alpaca API to create data_df dataframe for Prophet
                 # if crypto_stock == "Stocks":
@@ -66,11 +68,29 @@ def run():
                 # elif crypto_stock == "Cryptocurrency":
                 #     data_df = alpaca_api_crypto(tickers, timeframe, start_date, end_date)
 
+                # Use the yahoo finance api to get ticker data using provided information
                 data_df = yahoo_api(tickers, period, interval)
 
 
-                # Use Prophet to intake data from previous functions and produce a forecast plot and a trend plot
-                data_plot, trends_plot = prophet_forecast(data_df, length, frequency)
+                # if data_df != 1:
+                # # Switch ran to True to show plots
+                #     ran = True
+                # # Use Prophet to intake data from previous functions and produce a forecast plot and a trend plot
+                #     data_plot, trends_plot = prophet_forecast(data_df, length, frequency)
+                # else:
+                #     st.write("no")
+
+                # Check if the data_df dataframe is empty and return a warning else run the appropriate code
+                if data_df.empty:
+                    st.warning("Invalid Ticker! Please try again.")
+                else:
+                    # Switch ran to True to show plots
+                    ran = True
+
+                    # Use Prophet to intake data from previous functions and produce a forecast plot and a trend plot
+                    data_plot, trends_plot = prophet_forecast(data_df, length, frequency)
+
+
 
         # Create blank space for spacing purposes
         st.markdown("#")
@@ -78,7 +98,9 @@ def run():
                 # Use Pandas TA to identify buy and sell signals
                 # signals_plot = technical_signals(data_df)
 
-    # Display plots using streamlit.pyplot if run button has been pressed else display a message
+
+
+    # # Display plots using streamlit.pyplot if run button has been pressed else display a message
     if ran is True:
         st.pyplot(data_plot, dpi=500)
         st.pyplot(trends_plot, dpi=500)
