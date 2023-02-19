@@ -13,6 +13,8 @@ def ticker_intake():
     # If tickers box is left empty, use placeholder as default value. This is used instead of streamlit's value argument so the user doesn't need to delete the default text before inputting theirs
     if tickers == "":
         tickers = "SPY"
+    else:
+        pass
 
     # Return ticker for later use
     return tickers
@@ -29,6 +31,8 @@ def ticker_intake_crypto():
     # If tickers box is left empty, use placeholder as default value. This is used instead of streamlit's value argument so the user doesn't need to delete the default text before inputting theirs
     if tickers == "":
         tickers = "BTC"
+    else:
+        pass
     
     tickers = tickers + "-USD"
 
