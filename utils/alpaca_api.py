@@ -1,3 +1,5 @@
+"""
+
 # Import initial libraries and dependencies
 from dotenv import load_dotenv
 import alpaca_trade_api as tradeapi
@@ -69,3 +71,5 @@ def alpaca_api_crypto(tickers, timeframe, start_date, end_date):
 
     # Return dataframe for Prophet
     return data_df
+
+"""

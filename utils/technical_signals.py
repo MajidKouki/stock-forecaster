@@ -1,3 +1,5 @@
+"""
+
 # Import initial libraries and dependencies
 import pandas as pd
 import pandas_ta as ta
@@ -59,3 +61,4 @@ def technical_signals(data_df):
     plt.grid(True)
 
     return signals_plot
+"""
