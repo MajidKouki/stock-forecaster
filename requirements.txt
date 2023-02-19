@@ -1,6 +1,4 @@
 # Specify dependencies for pip install in streamlit
-alpaca_trade_api
-python-dotenv
 matplotlib
 pandas_ta
 streamlit
@@ -8,3 +6,4 @@ datetime
 prophet
 pandas
 numpy
+yfinance
