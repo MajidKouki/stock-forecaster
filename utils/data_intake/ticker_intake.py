@@ -10,6 +10,10 @@ def ticker_intake():
     # If ticker is given, use .upper() to ensure its properly formatted for API
     tickers = tickers.upper()
 
+    # If tickers box is left empty, use placeholder as default value
+    if tickers == "":
+        tickers = "SPY"
+
     # Return ticker for later use
     return tickers
 
@@ -21,6 +25,10 @@ def ticker_intake_crypto():
 
     # If ticker is given, use .upper() to ensure its properly formatted for API
     tickers = tickers.upper()
+
+    # If tickers box is left empty, use placeholder as default value
+    if tickers == "":
+        tickers = "BTC"
 
     tickers = tickers + "-USD"
 
