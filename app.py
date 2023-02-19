@@ -4,7 +4,7 @@ import streamlit as st
 
 # Custom imports - Utilities
 from utils.prophet_forecast import prophet_forecast
-from utils.alpaca_api import alpaca_api, alpaca_api_crypto
+# from utils.alpaca_api import alpaca_api, alpaca_api_crypto
 from utils.crypto_or_stock import crypto_or_stock
 from utils.yahoo_api import yahoo_api
 # from utils.technical_signals import technical_signals
