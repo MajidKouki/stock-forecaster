@@ -1,6 +1,6 @@
 # Stock Forecaster
 
-Web interface application utilizing Prophet library and Alpaca Trade API to provide stock forecasts and trend data. This application was designed for a client with the intention of creating a very simple to use system for non-technical users with minimal setup and detailed instructions while enabling easy access to machine learning tools for time series forecasting and trend analysis.
+Web interface application utilizing Prophet library and Yahoo Finance API to provide stock forecasts and trend data. This application was designed for a client with the intention of creating a very simple to use system for non-technical users with minimal setup and detailed instructions while enabling easy access to machine learning tools for time series forecasting and trend analysis.
 
 ---
 
@@ -10,11 +10,9 @@ This project leverages python with the following packages:
 
 * [Pandas](https://github.com/pandas-dev/pandas) - For plotting and dataframes.
 
-* [Dotenv](https://pypi.org/project/python-dotenv/) - For accessing the .env file.
-
 * [Prophet](https://github.com/facebook/prophet) - For forecasting.
 
-* [Alpaca Trade API](https://github.com/alpacahq/alpaca-trade-api-python) - For financial data from [Alpaca](https://alpaca.markets)
+* [Yfinance](https://github.com/ranaroussi/yfinance.git) - For financial data from Yahoo Finance
 
 * [Matplotlib](https://github.com/matplotlib/matplotlib) - For plotting.
 
@@ -42,19 +40,6 @@ This will run a subprocess to install all the dependencies in a single command. 
 
 ```
 pip install pandas, prophet, matplotlib, datetime, numpy, prophet, python-dotenv, alpaca-trade-api, pandas_ta, streamlit
-```
-
-Next it will be necessary to populate a .env file with the necessary Alpaca API keys. Signing up with Alpaca is easy and allows future usage with data and trading APIs. An example.env file is included and can be used to store API data as long as it's properly renamed. Example of the .env:
-
-```
-ALPACA_API_KEY = "<Your API Key Here>"
-ALPACA_SECRET_KEY = "<Your Secret Key Here>"
-```
-
-Once the API keys have been generated on the Alpaca website and the example.env has been populated, run the following command to properly rename:
-
-```
-mv example.env .env 
 ```
 
 ---
@@ -85,20 +70,6 @@ Example outputs of the code are as follows:
 
 ---
 
-## Planned features
-
-* Streamlit conversion is beign tested for better UI/UX and speed of use
-* ~~Cryptocurrency data compatibility~~
-* ~~Pandas TA trading strategy & indicator chart options~~
-* Ability to modify indicators
-* ~~Buy & sell algorithm to help identify exit and entry points in data~~
-* Signal labels
-* More comprehensive error messages and sys.exit statements to ensure consistent results
-* Possible transition from Alpaca to Yahoo Finance for ease of use
-* Possible transition from CLI app to web app for ease of use
-
----
-
 ## Contributors
 
 Brought to you by Majid Kouki. You can reach me at [majidkpy@gmail.com](mailto:majidkpy@gmail.com).
@@ -108,14 +79,3 @@ Brought to you by Majid Kouki. You can reach me at [majidkpy@gmail.com](mailto:m
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-<!-- 
-
-file save removed
-streamlit displays
-
-python install.py
-streamlit run app.py
-or use deployed link
-
-transition API for less restraints
-yfinance maybe -->
