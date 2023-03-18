@@ -4,6 +4,12 @@ Web interface application utilizing Prophet library and Yahoo Finance API to pro
 
 ---
 
+## Deployed App
+
+You can try the app [here!](https://stock-forecasting.streamlit.app/) Hosted on Streamlit and accessible on the web or locally!
+
+---
+
 ## Technologies
 
 This project leverages python with the following packages:
@@ -26,8 +32,6 @@ This project leverages python with the following packages:
 
 ## Installation Guide
 
-This project assumes the user has basics setup (git, terminal or git bash, python). If not, please refer to appropriate websites and documentation prior to using this project.
-
 Before first running the application, it may be necessary to install the required dependencies. This can be done using traditional pip installation or the included install file (recommended).
 
 To install using the install file, navigate to the project directory and run the following code:
@@ -39,12 +43,14 @@ python install.py install
 This will run a subprocess to install all the dependencies in a single command. Alternatively, manual installation can be done as follows:
 
 ```
-pip install pandas, prophet, matplotlib, datetime, numpy, prophet, python-dotenv, alpaca-trade-api, pandas_ta, streamlit
+pip install pandas, prophet, matplotlib, datetime, numpy, prophet, streamlit, yfinance
 ```
 
 ---
 
 ## Usage
+
+The easiest way to use this application is to visit the link towards the top of the document which will lead to the deployed version.
 
 After the initial setup and install, the program can be run by typing the following into the terminal:
 
@@ -58,8 +64,8 @@ As the program is opened, a financial disclaimer will appear to ensure the user 
 * Ticker - ex. SPY or BTC
 * Timeframe - Either 1Day, 1Hour or 1Min
 * Forecast Length - Defaults are 30 days, 720 hours, or 1440 minutes
-* Data Start Date - Default is 2020-01-01
-* Data End Date - Default is current date on system
+* Period - Period of data used. Default is 12 months
+* Interval - Interval of data used. Default is 1 day
 
 Many of these have default values outside of the stock ticker, which is required to run the program. After all values have been provided, the program will pull data using the Alpaca API, prepare it, use it with the Prophet model, and display a forecast plot and a trend plot.
 
