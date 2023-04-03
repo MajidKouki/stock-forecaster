@@ -71,8 +71,8 @@ Many of these have default values outside of the stock ticker, which is required
 
 Example outputs of the code are as follows:
 
-<img src="./imgs/web.jpeg" alt="Streamlit Web App" width="700" height="800">
-<img src="./imgs/chart.jpeg" alt="Resulting Charts" width="700" height="800">
+<img src="./imgs/web.png" alt="Streamlit Web App" width="300" height="800">
+<img src="./imgs/chart.png" alt="Resulting Charts" width="700" height="800">
 
 ---
 
