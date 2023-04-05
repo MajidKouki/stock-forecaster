@@ -6,6 +6,7 @@ import streamlit as st
 from utils.prophet_forecast import prophet_forecast
 from utils.crypto_or_stock import crypto_or_stock
 from utils.yahoo_api import yahoo_api
+from utils.technical_signals import technical_signals
 
 # Custom imports - Data Intake Utilities
 from utils.data_intake.timeframe_intake import timeframe_intake
@@ -62,14 +63,16 @@ def run():
 
                     # Use Prophet to intake data from previous functions and produce a forecast plot and a trend plot
                     data_plot, trends_plot = prophet_forecast(data_df, length, frequency)
+                    signals_plot = technical_signals(data_df)
 
         # Create blank space for spacing purposes
         st.markdown("#")
 
     # # Display plots using streamlit.pyplot if run button has been pressed else display a message
     if ran is True:
-        st.pyplot(data_plot, dpi=500)
-        st.pyplot(trends_plot, dpi=500)
+        st.pyplot(data_plot, dpi = 500)
+        st.pyplot(trends_plot, dpi = 500)
+        st.pyplot(signals_plot, dpi = 500)
     else:
         st.markdown("#### Fill in the details in the sidebar and hit Run to get started!")
 
