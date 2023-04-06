@@ -14,6 +14,7 @@ from utils.data_intake.ticker_intake import ticker_intake, ticker_intake_crypto
 from utils.data_intake.prophet_periods import prophet_periods
 from utils.data_intake.interval_intake import interval_intake
 from utils.data_intake.period_intake import period_intake
+from utils.data_intake.technical_intake import technical_intake
 
 # Define function to house the program
 def run():
@@ -45,6 +46,9 @@ def run():
         # Intake interval from user and assign to interval
         interval = interval_intake()
 
+        # Intake technical indicators from user and assign to indicators
+        indicator_1, indicator_2, indicator_1_len, indicator_2_len = technical_intake()
+
         # Create a variable to determine whether plots are displayed or not
         ran = False
 
@@ -63,8 +67,8 @@ def run():
 
                     # Use Prophet to intake data from previous functions and produce a forecast plot and a trend plot
                     data_plot, trends_plot = prophet_forecast(data_df, length, frequency)
-                    signals_plot = technical_signals(data_df)
-
+                    signals_plot = technical_signals(data_df, indicator_1, indicator_2, indicator_1_len, indicator_2_len)
+        
         # Create blank space for spacing purposes
         st.markdown("#")
 
