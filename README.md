@@ -24,7 +24,7 @@ This project leverages python with the following packages:
 
 * [Numpy](https://github.com/numpy/numpy) - For Prophet usage.
 
-<!-- * [Pandas TA](https://github.com/twopirllc/pandas-ta) - For indicators. -->
+* [Pandas TA](https://github.com/twopirllc/pandas-ta) - For indicators.
 
 * [Streamlit](https://github.com/streamlit/streamlit) - For deploying app in browser.
 
