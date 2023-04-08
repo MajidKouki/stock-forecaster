@@ -43,7 +43,7 @@ python install.py install
 This will run a subprocess to install all the dependencies in a single command. Alternatively, manual installation can be done as follows:
 
 ```
-pip install pandas, prophet, matplotlib, datetime, numpy, prophet, streamlit, yfinance
+pip install pandas, prophet, matplotlib, datetime, numpy, prophet, streamlit, yfinance, pandas_ta
 ```
 
 ---
@@ -66,6 +66,8 @@ As the program is opened, a financial disclaimer will appear to ensure the user 
 * Forecast Length - Defaults are 30 days, 720 hours, or 1440 minutes
 * Period - Period of data used. Default is 12 months
 * Interval - Interval of data used. Default is 1 day
+* Indicators 1 & 2 - Select indicators
+* Indicator 1 & 2 Length - Length for indicators
 
 Many of these have default values outside of the stock ticker, which is required to run the program. After all values have been provided, the program will pull data using the Alpaca API, prepare it, use it with the Prophet model, and display a forecast plot and a trend plot.
 
