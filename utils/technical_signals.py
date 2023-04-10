@@ -14,7 +14,7 @@ def technical_signals(data_df, indicator_1, indicator_2, indicator_1_len, indica
 
     if indicator_2 == "EMA":
         ind2 = ta.ema(data_df["Close"], length=indicator_2_len)
-    elif indicator_1 == "SMA":
+    elif indicator_2 == "SMA":
         ind2 = ta.sma(data_df["Close"], length=indicator_2_len)
 
     # Convert EMAs to dataframes
