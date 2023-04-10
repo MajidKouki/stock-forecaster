@@ -15,13 +15,18 @@ def technical_intake():
         ["EMA", "SMA"]
     )  
 
-    # Intake the length for the indicators
+    # Intake the length for the indicators and assign a default value if needed
     indicator_1_len = st.text_input("Enter the length for the first indicator")
+    if indicator_1_len == "":
+        indicator_1_len = 14
+    
     indicator_2_len = st.text_input("Enter the length for the second indicator")
+    if indicator_2_len == "":
+        indicator_2_len = 28
 
     # Ensure indicators are integers
-    indicator_1_len = int(indicator_1_len)
-    indicator_2_len = int(indicator_2_len)
+    indicator_1_len = float(indicator_1_len)
+    indicator_2_len = float(indicator_2_len)
 
     # Return indicator info for use in charting
     return indicator_1, indicator_2, indicator_1_len, indicator_2_len
